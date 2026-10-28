@@ -14,20 +14,22 @@ The detector configuration lists 20 classes: Pizza, Mansaf, Mjadra, Maqluba, Fas
 
 ## Recorded model results
 
-The final notebook records a YOLOv8s run of 130 epochs at 960-pixel image size, followed by a separate evaluation output. The recorded evaluation reports **80.9% mAP@0.50**, **64.7% mAP@0.50:0.95**, **74.2% precision**, **83.5% recall**, and **78.6% F1** on 825 images containing 786 annotated instances; 304 images were backgrounds.
+The final notebook records a YOLOv8s run of 130 epochs at 960-pixel image size, followed by a separate evaluation output. These are the metrics printed in the notebook:
 
-The notebook also records a training-cell summary of 88.8% mAP@0.50 and 69.7% mAP@0.50:0.95 over 8,615 images and 9,798 instances. These are the notebook's outputs, not results reproduced in this repository. See the [full evaluation notes and per-class metrics](docs/model-evaluation.md).
+| Notebook output | Images | Instances | Precision | Recall | mAP@0.50 | mAP@0.50:0.95 | F1 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Separate evaluation | 825 | 786 | 74.2% | 83.5% | 80.9% | 64.7% | 78.6% |
+| Training-cell summary | 8,615 | 9,798 | 83.7% | 83.4% | 88.8% | 69.7% | — |
+
+The evaluation output also lists 304 background images. Full per-class values are in the [evaluation report](docs/model-evaluation.md).
+
+These are transcribed notebook outputs; they have not been reproduced from the dataset in this repository.
 
 **Read the evaluation caveat before interpreting these numbers:** the shared `data1.yaml` currently points both `train` and `val` to the same `food` directory, while the evaluation output scans a `test.cache` file. The training cell saves `Model/YOLO_Trained_Model.pt`, but the later evaluation cell loads `final_version.pt`. The data split and checkpoint used for each output therefore need confirmation before these metrics can be treated as a verified held-out benchmark.
 
-## Sample prediction inputs
+## Qualitative prediction output
 
-These are four sample photos from the shared `Data_prediction` folder. They are **input images**, not annotated model outputs; the shared folder did not contain rendered prediction overlays or the model checkpoint needed to recreate them.
-
-| Sample 1 | Sample 2 |
-| --- | --- |
-| ![Sample meal input 1](assets/prediction-inputs/sample_01.jpg) | ![Sample meal input 2](assets/prediction-inputs/sample_02.jpg) |
-| ![Sample meal input 3](assets/prediction-inputs/sample_03.jpg) | ![Sample meal input 4](assets/prediction-inputs/sample_04.jpg) |
+The notebook's inference cell is written to draw prediction boxes over the photos in `Data_prediction`. However, the saved cell output in the shared notebook is marked **“Output hidden”** and contains no rendered images. The four photos copied into [`assets/prediction-inputs/`](assets/prediction-inputs/) are original inputs only; they are not model predictions. The shared Drive material also did not include the `.pt` checkpoint needed to recreate the overlays.
 
 ## Notebook and configuration
 
