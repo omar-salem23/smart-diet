@@ -1,0 +1,28 @@
+# Example Ultralytics dataset configuration.
+# Place the dataset alongside this repository in ../dataset and keep splits separate.
+path: ../dataset
+train: images/train
+val: images/val
+test: images/test
+nc: 20
+names:
+  - Pizza
+  - Mansaf
+  - Mjadra
+  - Maqluba
+  - Fasolia
+  - Awameh
+  - Salad
+  - Molokhia
+  - Shawarma
+  - Macaroni
+  - Burger
+  - Kunafa
+  - Dawali
+  - Kabsa
+  - Msakan
+  - Qatayif
+  - Cucumber with Yogurt
+  - Mahashi
+  - Coleslaw Salad
+  - Muhalabia

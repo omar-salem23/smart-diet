@@ -1,0 +1,27 @@
+
+nc: 20  # عدد الفئات
+names:
+  - Pizza
+  - Mansaf
+  - Mjadra
+  - Maqluba
+  - Fasolia
+  - Awameh
+  - Salad
+  - Molokhia
+  - Shawarma
+  - Macaroni
+  - Burger
+  - Kunafa
+  - Dawali
+  - Kabsa
+  - Msakan
+  - Qatayif
+  - Cucumber with Yogurt
+  - Mahashi
+  - Coleslaw Salad
+  - Muhalabia
+
+train: /content/drive/MyDrive/data/food
+val: /content/drive/MyDrive/data/food
+test: /content/drive/MyDrive/data/test
