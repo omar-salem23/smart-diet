@@ -39,4 +39,4 @@ The training output records 130 epochs completed in 4.901 hours on an NVIDIA A10
 - The separate evaluation output scans a `test.cache` file and reports 825 images, but the evaluation cell does not explicitly pass `split="test"`.
 - The training cell saves `Model/YOLO_Trained_Model.pt`; a later evaluation cell loads `final_version.pt`. The shared folder does not contain either checkpoint, so the evaluation model cannot be matched to the training run.
 - The shared `configs/data1.drive.yaml` has identical `train` and `val` paths. Confirm the split configuration and checkpoint before presenting these values as a verified held-out benchmark.
-- The notebook's inference cell output is marked hidden, and the shared `Data_prediction` folder contains input photos without saved box overlays. No qualitative prediction images are claimed in this repository.
+- The notebook's inference cell output is marked hidden. Separately supplied annotated examples are now included under `assets/prediction-results/`; they are qualitative examples and cannot be independently regenerated here without the checkpoint and source images.
